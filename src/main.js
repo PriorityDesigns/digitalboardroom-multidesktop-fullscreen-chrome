@@ -98,7 +98,7 @@ chrome.app.runtime.onLaunched.addListener(function () {
             for (var i = 0; i < extendedDisplays.length; i++) {
                 var di = extendedDisplays[i];
                 appWidth += di.bounds.width;
-                appHeight = Math.min(appHeight, di.bounds.height);
+                appHeight = Math.max(appHeight, di.bounds.height);//Math.min(appHeight, di.bounds.height);
             }
             console.info("Full Screen size:" +
                 "\n  Width:  " + appWidth + " pixels" +
